@@ -1,0 +1,43 @@
+@import 'tailwindcss';
+
+@source '../**/*.blade.php';
+@source '../**/*.vue';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --color-paper: #f3f1eb;
+    --color-ink: #1c1915;
+    --color-leaf: #1d6b48;
+    --color-leaf-dark: #154e35;
+    --color-clay: #9a3412;
+    --color-line: #e4e0d6;
+}
+
+html,
+body,
+#app {
+    min-height: 100%;
+}
+
+html {
+    scroll-padding-bottom: calc(9rem + env(safe-area-inset-bottom));
+}
+
+body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+}
+
+input,
+select,
+textarea,
+button {
+    font-size: 16px;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
