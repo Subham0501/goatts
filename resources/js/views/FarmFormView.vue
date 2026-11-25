@@ -68,7 +68,7 @@ async function saveDraft(silent = true) {
         const saved = await persistFarm({ ...farm, draft_step: step.value }, 'draft')
         farm.sync_status = saved.sync_status
         farm.updated_at = saved.updated_at
-        if (!silent) ui.flash('Draft saved.')
+        if (!silent) ui.flash(sync.online === false ? 'Draft saved on this phone.' : 'Draft saved.')
     } finally {
         hydrating = false
     }
@@ -97,7 +97,7 @@ async function submit() {
     saving.value = true
     try {
         await persistFarm({ ...farm, draft_step: steps.length - 1 }, 'queue')
-        ui.flash('Farm saved.')
+        ui.flash(sync.online === false ? 'Farm saved on this phone. It will send when internet is back.' : 'Farm saved.')
         sync.nudge()
         router.push({ name: 'farm-detail', params: { uuid: farm.uuid } })
     } finally {

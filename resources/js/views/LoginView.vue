@@ -37,7 +37,7 @@ async function submit() {
         <p class="text-sm font-semibold uppercase tracking-wide text-leaf">Sundarbazar Municipality · Lamjung</p>
         <h1 class="mt-2 text-3xl font-semibold tracking-tight">Goat Health Survey</h1>
         <p class="mt-3 text-sm leading-6 text-stone-700">
-            Enter your account to record farm and goat deworming surveys.
+            Sign in once while you have internet. After that, farm and goat surveys can be recorded without a connection.
         </p>
         <form class="mt-8 grid gap-4 rounded-3xl border border-line bg-white p-5" @submit.prevent="submit">
             <TextField v-model="email" label="Email" type="email" autocomplete="username" inputmode="email" />

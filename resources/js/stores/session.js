@@ -41,7 +41,7 @@ export const useSessionStore = defineStore('session', {
             this.ready = true
             if (this.token) {
                 const { useSyncStore } = await import('./sync')
-                await useSyncStore().boot()
+                useSyncStore().boot()
             }
             askPersistentStorage()
         },

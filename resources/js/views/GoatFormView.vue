@@ -74,7 +74,7 @@ async function saveDraft(silent = true) {
         const saved = await persistGoat({ ...goat, draft_step: step.value }, 'draft')
         goat.sync_status = saved.sync_status
         goat.updated_at = saved.updated_at
-        if (!silent) ui.flash('Draft saved.')
+        if (!silent) ui.flash(sync.online === false ? 'Draft saved on this phone.' : 'Draft saved.')
     } finally {
         hydrating = false
     }
@@ -103,7 +103,7 @@ async function submit(addAnother = false) {
     saving.value = true
     try {
         await persistGoat({ ...goat, draft_step: steps.length - 1 }, 'queue')
-        ui.flash('Goat saved.')
+        ui.flash(sync.online === false ? 'Goat saved on this phone. It will send when internet is back.' : 'Goat saved.')
         sync.nudge()
         if (addAnother) {
             const farm = await getFarm(goat.farm_uuid)

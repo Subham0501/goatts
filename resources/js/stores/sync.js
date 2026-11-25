@@ -4,7 +4,7 @@ import { checkApi } from '../services/connectivity'
 import { useSessionStore } from './session'
 export const useSyncStore = defineStore('sync', {
     state: () => ({
-        online: false,
+        online: null,
         running: false,
         lastMessage: '',
         booted: false,

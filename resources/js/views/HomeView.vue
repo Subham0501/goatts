@@ -55,7 +55,7 @@ const topics = [
                         Goat health and deworming survey
                     </h1>
                     <p class="mt-4 max-w-xl text-base leading-7 text-stone-700">
-                        Field records of gastrointestinal nematodes in goats. Visit a farm once, then add each sampled goat to that farm.
+                        Field records of gastrointestinal nematodes in goats. Visit a farm once, then add each sampled goat to that farm. After one sign-in, surveys can be recorded without internet.
                     </p>
                     <RouterLink
                         :to="session.user ? '/dashboard' : '/login'"

@@ -3,12 +3,14 @@ import { computed, ref } from 'vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
 import { useUiStore } from '../stores/ui'
 import { useSessionStore } from '../stores/session'
+import { useSyncStore } from '../stores/sync'
 import ConfirmDialog from './ConfirmDialog.vue'
 
 const route = useRoute()
 const router = useRouter()
 const ui = useUiStore()
 const session = useSessionStore()
+const sync = useSyncStore()
 const confirmLogout = ref(false)
 const signingOut = ref(false)
 
@@ -58,6 +60,9 @@ const title = computed(() => {
                 </div>
                 <h1 v-if="route.name !== 'dashboard'" class="mt-1 truncate text-lg font-semibold leading-tight">{{ title }}</h1>
             </div>
+            <p v-if="sync.online === false" class="bg-amber-50 px-4 py-2 text-sm text-amber-950">
+                No internet. Surveys stay on this phone and send when the connection returns.
+            </p>
             <p
                 v-if="ui.notice"
                 class="px-4 py-2 text-sm"
