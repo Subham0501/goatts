@@ -29,7 +29,7 @@ const topics = [
     <div class="min-h-dvh">
         <header class="sticky top-0 z-20 border-b border-line bg-paper/95 backdrop-blur">
             <div class="mx-auto flex max-w-5xl items-center justify-between gap-3 px-5 py-4">
-                <RouterLink to="/" class="font-semibold text-leaf">Goat Health Survey</RouterLink>
+                <RouterLink to="/" class="font-semibold text-leaf">Goat Deworming Survey</RouterLink>
                 <RouterLink
                     :to="session.user ? '/dashboard' : '/login'"
                     class="inline-flex min-h-10 items-center rounded-xl bg-leaf px-4 text-sm font-semibold text-white"
@@ -52,7 +52,7 @@ const topics = [
                 <div>
                     <p class="text-sm font-semibold uppercase tracking-wide text-leaf">Sundarbazar Municipality, Lamjung</p>
                     <h1 class="mt-3 max-w-2xl text-4xl font-semibold leading-tight tracking-tight">
-                        Goat health and deworming survey
+                        Goat deworming survey
                     </h1>
                     <p class="mt-4 max-w-xl text-base leading-7 text-stone-700">
                         Field records of gastrointestinal nematodes in goats. Visit a farm once, then add each sampled goat to that farm. After one sign-in, surveys can be recorded without internet.

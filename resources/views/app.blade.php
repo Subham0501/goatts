@@ -12,7 +12,7 @@
         <link rel="manifest" href="/manifest.webmanifest">
         <link rel="icon" href="/icons/icon-192.png">
         <link rel="apple-touch-icon" href="/icons/icon-192.png">
-        <title>Goat Health Survey</title>
+        <title>Goat Deworming Survey</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
